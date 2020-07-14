@@ -1,0 +1,162 @@
+.dn-section {
+  background-image: linear-gradient(rgb(255, 187, 0), orange);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dn-main {
+  background-size: 100% 100%;
+  background-image: url("https://eskipaper.com/images/pokemon-backgrounds-8.jpg");
+  width: 80%;
+  height: 80%;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dn-todo-box {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.dn-doneTask {
+  text-decoration: line-through;
+  color: black;
+  font-family: fantasy;
+  font-size: 25px;
+  font-weight: 300;
+  transition: ease 0.3s;
+}
+
+.dn-undoneTask {
+  color: black;
+  font-family: fantasy;
+  font-weight: 300;
+  font-size: 25px;
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+
+.dn-doneTask:hover{
+  color: rgb(194, 26, 3);
+}
+
+.dn-undoneTask:hover{
+  color: rgb(194, 26, 3);
+  text-decoration: none;
+}
+
+.dn-num {
+  display: inline-block;
+  color: black;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 0px 5px;
+}
+
+button#dn-all,
+button#dn-done,
+button#dn-undone {
+  color: rgb(184, 130, 68);
+  margin-left: 7px;
+}
+
+button#dn-all:hover,
+button#dn-done:hover,
+button#dn-undone:hover {
+  color: black;
+}
+
+.dn-button-2 {
+  margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0px;
+}
+
+.dn-input-textbox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dn-input-area {
+  width: 270px;
+  margin-left: 7px;
+  font-family: fantasy;
+  color: #dd9716;
+  border-color: #fec0d0;
+  border-radius: 30px;
+  padding: 5px 15px;
+}
+
+.dn-input-main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+#dn-priority {
+  display: inline-block;
+  margin-left: 5px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: #fbfe7d;
+  color: #dd9716;
+  border-color: #fec0d0;
+  transition-duration: 0.5s;
+  width: 5.5rem;
+}
+
+
+.dn-head-head-text {
+  font-family: fantasy;
+  font-size: 90px;
+  font-weight: bolder;
+  color: rgb(241, 226, 8);
+}
+
+#dn-add {
+  margin-left: 7px;
+  color: black;
+}
+
+.dn-head-text {
+  color: rgb(80, 78, 78);
+}
+
+.dn-btn-task{
+  margin: 5px;
+  transition: ease 0.25s;
+}
+
+#dn-star{
+  display: inline-block;
+  font-size: 20px;
+  margin: 0px 10px;
+  width: 10px;
+  height: 10px;
+}
+
+#dn-star:hover{
+  transform: scale(1.2);
+  color: rgb(255, 115, 0);
+}
+
+.dn-display{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow-y: scroll;
+  height: 50%;
+}
