@@ -5,9 +5,24 @@ Required Features 🎯
 [ ] User can mark a todo done.
 [ ] User can see a list of their todos.
 */
-let todoList = []
+
+//Prompt the user to enter his/her username
+let Username = prompt("Please enter your name:")
+//Keep asking ultil user enters something
+while (Username === ''){
+  Username = prompt('Please enter your name:')
+}
+
+//Get the data from local storage with given username
+let todoList = JSON.parse(localStorage.getItem(Username)) || []
+
+//Necessary variables
 let is_clicked = false
 let whichFrame = 'all'
+
+//display the previously save to-do list of given user
+displayHTML(['undone','done'], whichFrame)
+
 
 //Click Event for Add BTN to add new task object
 document.getElementById('dn-add').addEventListener('click', function (evt) {
@@ -33,6 +48,7 @@ document.getElementById('dn-add').addEventListener('click', function (evt) {
   //Display the todoList with the current frame
   displayFrame()
   updateBtn()
+  updateLocalStorage(todoList, Username)
 })
 
 //Click Event for All button
@@ -118,7 +134,9 @@ function clickTask(index) {
     todoList[index]['is_clicked'] = false
   }
 
+  //Update the button and todoList
   updateBtn()
+  updateLocalStorage(todoList, Username)
 }
 
 //Function to remove a task at given index
@@ -126,6 +144,7 @@ function removeTask(index) {
   todoList.splice(index, 1)
   displayFrame()
   updateBtn()
+  updateLocalStorage(todoList, Username)
 }
 
 //Function to update button
@@ -146,15 +165,21 @@ function updateBtn() {
   //Calculate the number of elements that are marked undone
   let undone = todoList.filter((item) => item['complete'] === 'undone').length
 
-  console.log(undone)
   //Update the UI
   document.getElementById('dn-number-all').innerText = all
   document.getElementById('dn-number-undone').innerText = undone
   document.getElementById('dn-number-done').innerText = done
 }
 
+//Function to update the current local storage of given user
+function updateLocalStorage(newtodoList, username){
+  localStorage.setItem(username, JSON.stringify(newtodoList))
+}
+
 /*
 Note:
 1. Icon acts as text
-
+2. Know how to use Localstorage to save it permanently
+3. update button is the same as updating the to-do list. Thus, updateBtn() always goes with updateLocalStorage()
+4. Open console -> Find Application -> FInd localStorage
 */
