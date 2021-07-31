@@ -21,7 +21,9 @@ A simple todo list<br>
 
 ## 🚀 Features
 
-- The user can list out done and undone tasks
+- Users can list out done and undone tasks
+- Users can add or delete tasks
+- User can rank the importance of each task
 
 ## ⬇ Installation
 
